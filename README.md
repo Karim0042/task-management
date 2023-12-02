@@ -1,2 +1,6 @@
 # task-management
-This project helps you to create posts on a certain topic and find the least related post on that topic using OpenAI's embedding model.
+this project helps you create tasks and perform various operations on them
+# Technologies
+Liquibase
+Spring Web
+Spring Security
