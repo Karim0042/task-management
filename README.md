@@ -5,10 +5,10 @@ A simple Java-based task management system to help organize and manage tasks eff
 The Task Management System is a Java-based project designed to assist teams and individuals in organizing and tracking tasks. It provides a simple and intuitive interface for managing tasks with features to add, update, and mark tasks as completed.
 ## Technologies Used
 
-- **Java:** The core programming language for the project.
-- **Liquibase:** Database version control and schema management.
-- **Spring Web:** Utilized for building robust and flexible web applications.
-- **Spring Security:** Ensures secure authentication and authorization.
+- **[Java:](https://www.java.com/eng/)** The core programming language for the project.
+- **[Liquibase:](https://www.liquibase.org/)** Database version control and schema management.
+- **[Spring Web:](https://spring.io/projects/spring-framework)** Utilized for building robust and flexible web applications.
+- **[Spring Security:](https://spring.io/projects/spring-security)** Utilizes for authentication and authorization.
 
 ## Features
 
