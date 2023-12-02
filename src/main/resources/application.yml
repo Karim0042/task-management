@@ -1,0 +1,52 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://${TASK_MANAGEMENT_DB_HOST}:${TASK_MANAGEMENT_DB_PORT}/${TASK_MANAGEMENT_DB_NAME}?currentSchema=${TASK_MANAGEMENT_DB_SCHEMA}
+    username: ${TASK_MANAGEMENT_DB_USERNAME}
+    password: ${TASK_MANAGEMENT_DB_PASSWORD}
+  jpa:
+    properties:
+      hibernate:
+        format_sql: true
+        default_schema: ${TASK_MANAGEMENT_DB_SCHEMA}
+    hibernate:
+      ddl-auto: none
+    open-in-view:
+  liquibase:
+    change-log: classpath:/db/changelog/changelog-master.xml
+    default-schema: ${TASK_MANAGEMENT_DB_SCHEMA}
+    liquibase-schema: ${TASK_MANAGEMENT_DB_SCHEMA}
+    enabled: true
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: ${TASK_MANAGEMENT_EMAIL}
+    password: ${TASK_MANAGEMENT_EMAIL_PASSWORD}
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+security:
+  auth:
+    whitelist: >
+      /swagger-resources,
+      /swagger-resources/**,
+      /configuration/ui,  
+      /configuration/security,
+      /swagger-ui.html,
+      /webjars/**,
+      /api/public/**,
+      /v3/api-docs/**,
+      /v3/api-docs,
+      /swagger-ui/**,
+      /v2/api-docs,
+      /api/v1/public/**,
+      /ws-registration/**,
+      /api/v1/users/signin,
+      /api/v1/users/signup
+  jwt:
+    secret-key: ${TASK_MANAGEMENT_JWT_SECRET_KEY}
+ngrok:
+  enabled: true
+  auth-token: 2YxKU23Yp3gKrQDf0qrrgVPlJsR_5vCAEtcC9yUq6EQmHUygq

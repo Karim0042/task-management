@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
+    <changeSet id="2023-03-26-insert-role-records-to-roles-table" author="Karim Karimov">
+        <insert tableName="roles">
+            <column name="id" value="5ca3925735e041639781c3235c1e267e"/>
+            <column name="name" value="ADMIN"/>
+        </insert>
+        <insert tableName="roles">
+            <column name="id" value="d1705290f794492ca3a851b3a7748f18"/>
+            <column name="name" value="USER"/>
+        </insert>
+    </changeSet>
+
+
+</databaseChangeLog>

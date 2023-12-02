@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
+
+    <changeSet id="2023-11-26-create_users_table" author="Karim Karimov">
+        <createTable tableName="users">
+            <column name="id" type="char(32)">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="create_date" type="timestamp without time zone"/>
+            <column name="username" type="varchar(100)"/>
+            <column name="email" type="varchar(100)"/>
+            <column name="is_deleted" type="bool"/>
+            <column name="password" type="varchar(500)"/>
+        </createTable>
+    </changeSet>
+
+    <changeSet id="2023-11-26-create_roles_table" author="Karim Karimov">
+        <createTable tableName="roles">
+            <column name="id" type="char(32)">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="name" type="varchar(50)"/>
+        </createTable>
+    </changeSet>
+    <changeSet id="2023-11-26-categories_table" author="Karim Karimov">
+        <createTable tableName="categories">
+            <column name="id" type="char(32)">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="name" type="varchar(50)"/>
+        </createTable>
+    </changeSet>
+
+    <changeSet id="2023-11-26-create_user_roles_table" author="Karim Karimov">
+        <createTable tableName="user_roles">
+            <column name="role_id" type="char(32)">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="user_id" type="char(32)">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+        </createTable>
+        <addForeignKeyConstraint baseTableName="user_roles" baseColumnNames="user_id"
+                                 referencedTableName="users" referencedColumnNames="id"
+                                 constraintName="fk_roles_user"/>
+        <addForeignKeyConstraint baseTableName="user_roles" baseColumnNames="role_id"
+                                 referencedTableName="roles" referencedColumnNames="id"
+                                 constraintName="fk_roles"/>
+    </changeSet>
+
+    <changeSet id="2023-11-26-create_tasks-table" author="Karim Karimov">
+        <createTable tableName="tasks">
+            <column name="id" type="char(32)">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="name" type="varchar(256)"/>
+            <column name="priority" type="varchar(30)"/>
+            <column name="description" type="varchar(500)"/>
+            <column name="status" type="varchar(256)"/>
+            <column name="is_completed" type="bool"/>
+            <column name="deadline" type="timestamp without time zone"/>
+            <column name="updated_at" type="varchar(256)"/>
+            <column name="created_at" type="timestamp without time zone"/>
+            <column name="price" type="bigint"/>
+            <column name="user_id" type="char(32)"/>
+            <column name="category_id" type="char(32)"/>
+        </createTable>
+
+        <addForeignKeyConstraint baseTableName="tasks" baseColumnNames="user_id"
+                                 referencedTableName="users" referencedColumnNames="id"
+                                 constraintName="fk_tasks_user"/>
+        <addForeignKeyConstraint baseTableName="tasks" baseColumnNames="category_id"
+                                 referencedTableName="categories" referencedColumnNames="id"
+                                 constraintName="fk_tasks_category"/>
+    </changeSet>
+
+    <changeSet id="2023-11-26-create_otp_sessions_table" author="Karim Karimov">
+        <createTable tableName="otp_sessions">
+            <column name="id" type="char(32)">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+            <column name="create_date" type="timestamp without time zone"/>
+            <column name="user_id" type="char(32)"/>
+            <column name="is_used" type="bool"/>
+            <column name="otp_code" type="char(6)"/>
+        </createTable>
+    </changeSet>
+
+
+</databaseChangeLog>
