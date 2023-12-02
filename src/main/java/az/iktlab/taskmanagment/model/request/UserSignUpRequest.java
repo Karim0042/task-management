@@ -22,8 +22,7 @@ public class UserSignUpRequest {
     private String email;
     @Password
     private String password;
-    @NotNull(message = "Born date is required")
-    private Long bornDate;
+
     @NotNull
     private boolean rememberMe;
 }

@@ -18,7 +18,7 @@ public class CategoryController {
     private final CategoryService categoryService;
 
     @PostMapping
-    @Operation(summary = "This endpoint help us to add new task",
+    @Operation(summary = "This endpoint help us to add new category",
             responses = {
                     @ApiResponse(responseCode = "200", description = "The request was successful"),
                     @ApiResponse(responseCode = "400",

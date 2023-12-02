@@ -77,6 +77,14 @@ public class TaskServiceImpl implements TaskService {
                 .collect(Collectors.toList());
     }
 
+    @Override
+    public List<TaskResponse> getAll() {
+        List<Task> tasks = taskRepository.findAll();
+        return tasks.stream()
+                .map(taskResponseConverter)
+                .collect(Collectors.toList());
+    }
+
     private Task buildTask(TaskRequest taskRequest, String userId) {
         Category category = categoryRepository.findByName(taskRequest.getCategoryName())
                 .orElseThrow(() -> new ResourceNotFoundException("category not found"));

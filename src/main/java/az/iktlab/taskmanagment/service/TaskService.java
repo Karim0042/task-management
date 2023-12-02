@@ -15,4 +15,6 @@ public interface TaskService {
     void markAsCompleted(String id);
 
     List<TaskResponse> getAllByCategoryId(String id);
+
+    List<TaskResponse> getAll();
 }

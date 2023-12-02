@@ -15,7 +15,7 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @Builder
 public class TaskResponse {
-    @Schema(description = "Task Name", example = "Add new task")
+    private String id;
     private String name;
 
     private String description;

@@ -19,7 +19,7 @@ public class TaskRequest {
 
     @Schema(description = "Task Name", example = "Add new task")
     private String name;
-
+    @Schema(description = "Task description", example = "Add task description")
     private String description;
     private String categoryName;
     private TaskPriority priority;

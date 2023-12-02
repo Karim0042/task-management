@@ -9,6 +9,7 @@ public class TaskResponseConverter implements Function<Task, TaskResponse> {
     @Override
     public TaskResponse apply(Task task) {
         TaskResponse taskResponse = TaskResponse.builder()
+                .id(task.getId())
                 .categoryName(task.getCategory().getName())
                 .deadline(task.getDeadline())
                 .description(task.getDescription())
