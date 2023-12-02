@@ -8,7 +8,7 @@ The Task Management System is a Java-based project designed to assist teams and 
 - **Java:** The core programming language for the project.
 - **Liquibase:** Database version control and schema management.
 - **Spring Web:** Utilized for building robust and flexible web applications.
-- **Security:** Utilizes [Spring Security](https://spring.io/projects/spring-security) for authentication and authorization.
+- **[Spring Security](https://spring.io/projects/spring-security)** Utilizes for authentication and authorization.
 
 ## Features
 
