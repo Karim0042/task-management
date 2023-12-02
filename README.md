@@ -8,6 +8,7 @@ The Task Management System is a Java-based project designed to assist teams and 
 - **Java:** The core programming language for the project.
 - **Liquibase:** Database version control and schema management.
 - **Spring Web:** Utilized for building robust and flexible web applications.
+- **Spring Security:** Ensures secure authentication and authorization.
 
 ## Features
 
@@ -15,7 +16,6 @@ The Task Management System is a Java-based project designed to assist teams and 
 - **Task Update:** Modify task details or update the status of a task.
 - **Task Completion:** Mark tasks as completed to track progress.
 - **Task List:** View a list of all tasks, sorted by due date or status.
-- **Simple and Intuitive Interface:** User-friendly design for easy navigation.
 
 ## Getting Started
 
@@ -31,13 +31,13 @@ Before you begin, ensure you have the following installed:
 1. Clone the repository:
 
     ```bash
-    git clone https://github.com/yourusername/task-management-java.git
+    git clone https://github.com/Karim0042/task-management.git
     ```
 
 2. Compile the project:
 
     ```bash
-    cd task-management-java
+    cd task-management
     javac TaskManager.java
     ```
 
@@ -51,12 +51,4 @@ Before you begin, ensure you have the following installed:
 
 - Open the application and follow the on-screen instructions to manage tasks.
 - Use the menu options to create, update, and view tasks.
-- Enjoy organizing your tasks efficiently!
-
-## Contributing
-
-Contributions are welcome! If you have any suggestions, improvements, or bug fixes, please open an issue or submit a pull request.
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+- 
